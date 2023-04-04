@@ -1,0 +1,28 @@
+^C:\USERS\JACEK\ONEDRIVE\DOCUMENTS\_FULL-STACK-DEVELOPER\FLUTTER_PROJECTS\FLUTTER_WORLD_TIME\WORLD_TIME\BUILD\WINDOWS\CMAKEFILES\EE6B61131B377BEF0BCAAE35727433BA\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\flutter PROJECT_DIR=C:\Users\jacek\OneDrive\Documents\_FULL-STACK-DEVELOPER\Flutter_projects\flutter_world_time\world_time FLUTTER_ROOT=C:\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\jacek\OneDrive\Documents\_FULL-STACK-DEVELOPER\Flutter_projects\flutter_world_time\world_time\windows\flutter\ephemeral PROJECT_DIR=C:\Users\jacek\OneDrive\Documents\_FULL-STACK-DEVELOPER\Flutter_projects\flutter_world_time\world_time FLUTTER_TARGET=C:\Users\jacek\OneDrive\Documents\_FULL-STACK-DEVELOPER\Flutter_projects\flutter_world_time\world_time\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\jacek\OneDrive\Documents\_FULL-STACK-DEVELOPER\Flutter_projects\flutter_world_time\world_time\.dart_tool\package_config.json C:/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\JACEK\ONEDRIVE\DOCUMENTS\_FULL-STACK-DEVELOPER\FLUTTER_PROJECTS\FLUTTER_WORLD_TIME\WORLD_TIME\BUILD\WINDOWS\CMAKEFILES\3B2BF373C013496EE257CC2B82CCB200\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\JACEK\ONEDRIVE\DOCUMENTS\_FULL-STACK-DEVELOPER\FLUTTER_PROJECTS\FLUTTER_WORLD_TIME\WORLD_TIME\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/jacek/OneDrive/Documents/_FULL-STACK-DEVELOPER/Flutter_projects/flutter_world_time/world_time/windows -BC:/Users/jacek/OneDrive/Documents/_FULL-STACK-DEVELOPER/Flutter_projects/flutter_world_time/world_time/build/windows --check-stamp-file C:/Users/jacek/OneDrive/Documents/_FULL-STACK-DEVELOPER/Flutter_projects/flutter_world_time/world_time/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
