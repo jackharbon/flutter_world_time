@@ -1,0 +1,10 @@
+^C:\USERS\JACEK\ONEDRIVE\DOCUMENTS\_FULL-STACK-DEVELOPER\FLUTTER_PROJECTS\FLUTTER_WORLD_TIME\WORLD_TIME\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/jacek/OneDrive/Documents/_FULL-STACK-DEVELOPER/Flutter_projects/flutter_world_time/world_time/windows -BC:/Users/jacek/OneDrive/Documents/_FULL-STACK-DEVELOPER/Flutter_projects/flutter_world_time/world_time/build/windows --check-stamp-file C:/Users/jacek/OneDrive/Documents/_FULL-STACK-DEVELOPER/Flutter_projects/flutter_world_time/world_time/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

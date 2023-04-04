@@ -13,9 +13,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     data = data.isEmpty ? ModalRoute.of(context)?.settings.arguments : data;
     // print('====> home | DATA: $data');
-    // final apiDomain = data['apiDomain'];
-    // final locationUrl = data['locationUrl'];
-    // final apiKey = data['apiKey'];
     final continent = data['continent'];
     final country = data['country'];
     final city = data['city'];
@@ -24,7 +21,14 @@ class _HomePageState extends State<HomePage> {
     bool isIpGeo = data['isIpGeo'];
     String dayPart = data['dayPart'];
     String bgImage = '$dayPart.jpg';
-    Color bgColor = dayPart == true ? Colors.lightBlue : Colors.deepPurple;
+    const Color bgColor = Color(0xff4473ab);
+    if (dayPart == 'sunrise') Color bgColor = Color(0xff4473ab);
+    if (dayPart == 'midday') Color bgColor = Colors.red;
+    // if (dayPart == 'midday') Color bgColor = Color(0xff1d6da0);
+    if (dayPart == 'sunset') Color bgColor = Color(0xfff3d2c3);
+    if (dayPart == 'night1') Color bgColor = Color(0xff757077);
+    if (dayPart == 'night2') Color bgColor = Color(0xff02161d);
+
     // print('====> home | continent: $continent');
     // print('====> home | country: $country');
     // print('====> home | city: $city');

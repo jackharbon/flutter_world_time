@@ -26,7 +26,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Afrika',
         country: 'Kenya',
         city: 'Nairobi',
-        flag: 'kenya.png'),
+        flag: 'kenya.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -34,7 +34,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Africa',
         country: 'Egypt',
         city: 'Cairo',
-        flag: 'egypt.png'),
+        flag: 'egypt.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -42,7 +42,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Asia',
         country: 'Indonesia',
         city: 'Jakarta',
-        flag: 'indonesia.png'),
+        flag: 'indonesia.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -50,7 +50,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Asia',
         country: 'Israel',
         city: 'Jerusalem',
-        flag: 'israel.png'),
+        flag: 'israel.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -58,7 +58,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Asia',
         country: 'Japan',
         city: 'Tokio',
-        flag: 'japan.png'),
+        flag: 'japan.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -66,7 +66,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Asia',
         country: 'Singapore',
         city: 'Singapore (Pioneer)',
-        flag: 'singapore.png'),
+        flag: 'singapore.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -74,7 +74,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Asia',
         country: 'South Korea',
         city: 'Seoul',
-        flag: 'south_korea.png'),
+        flag: 'south_korea.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -82,7 +82,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Asia',
         country: 'Taiwan',
         city: 'Taipei',
-        flag: 'taiwan.png'),
+        flag: 'taiwan.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -90,7 +90,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Asia',
         country: 'Turkey',
         city: 'Istanbul',
-        flag: 'turkey.png'),
+        flag: 'turkey.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -98,7 +98,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Europe',
         country: 'Austria',
         city: 'Vienna',
-        flag: 'austria.png'),
+        flag: 'austria.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -106,7 +106,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Europe',
         country: 'Denmark',
         city: 'Copenhagen',
-        flag: 'denmark.png'),
+        flag: 'denmark.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -114,7 +114,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Europe',
         country: 'Finland',
         city: 'Helsinki',
-        flag: 'finland.png'),
+        flag: 'finland.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -122,7 +122,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Europe',
         country: 'France',
         city: 'Paris',
-        flag: 'france.png'),
+        flag: 'france.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -130,7 +130,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Europe',
         country: 'Germany',
         city: 'Berlin',
-        flag: 'germany.png'),
+        flag: 'germany.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -138,7 +138,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Europe',
         country: 'Poland',
         city: 'Warsaw',
-        flag: 'poland.png'),
+        flag: 'poland.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -146,7 +146,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Europe',
         country: 'Spain',
         city: 'Barcelona',
-        flag: 'spain.png'),
+        flag: 'spain.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -154,7 +154,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Europe',
         country: 'United Kingdom',
         city: 'London',
-        flag: 'uk.png'),
+        flag: 'uk.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -162,7 +162,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Europe',
         country: 'Ukraine',
         city: 'Kyiv',
-        flag: 'ukraine.png'),
+        flag: 'ukraine.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -170,7 +170,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'North America',
         country: 'Canada',
         city: 'Toronto',
-        flag: 'canada.png'),
+        flag: 'canada.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -178,7 +178,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'North America',
         country: 'United States',
         city: 'New York',
-        flag: 'usa.png'),
+        flag: 'usa.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -186,7 +186,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'North America',
         country: 'Mexico',
         city: 'Mexico City',
-        flag: 'mexico.png'),
+        flag: 'mexico.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -194,7 +194,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Oceania',
         country: 'Australia',
         city: 'Melbourn',
-        flag: 'australia.png'),
+        flag: 'australia.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -202,7 +202,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Oceania',
         country: 'New Zealand',
         city: 'Auckland',
-        flag: 'new_zealand.png'),
+        flag: 'new_zealand.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -210,7 +210,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'Oceania',
         country: 'Marshal Islands',
         city: 'Majuro',
-        flag: 'marshal_islands.png'),
+        flag: 'marshal_islands.jpg'),
     WorldTime(
         apiDomain: 'timezone.abstractapi.com',
         locationUrl: 'v1/current_time/',
@@ -234,7 +234,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: 'South America',
         country: 'Brasil',
         city: 'Sao Paulo',
-        flag: 'brasil.png'),
+        flag: 'brasil.jpg'),
     WorldTime(
         apiDomain: 'ipgeolocation.abstractapi.com',
         locationUrl: 'v1/',
@@ -242,7 +242,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         continent: '',
         country: 'Go Back to Your Location',
         city: '',
-        flag: 'uk.png'),
+        flag: 'uk.jpg'),
   ];
   void updateTime(index) async {
     WorldTime chosenLocation = locations[index];
