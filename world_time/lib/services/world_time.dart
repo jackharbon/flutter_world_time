@@ -1,74 +1,74 @@
 import 'package:http/http.dart';
 import 'dart:convert';
-import 'package:intl/intl.dart';
+import 'dart:async';
 
 class WorldTime {
-  String apiDomain = 'worldtimeapi.org';
+  String apiDomain = '';
   String locationUrl = '';
-  String timezone = '';
+  String apiKey = '';
   String continent = '';
   String country = '';
   String city = '';
   String flag = '';
   String time = '';
-  bool isDaytime = false;
+  String dayPart = '';
+  bool isIpGeo = false;
 
   WorldTime({
+    required this.apiDomain,
     required this.locationUrl,
+    required this.apiKey,
     required this.continent,
     required this.country,
     required this.city,
     required this.flag,
   });
 
-  Future<void> getTime() async {
+  Future<void> getDataFromApi() async {
     try {
-      var url = Uri.http(apiDomain, locationUrl);
+      final queryParameters = {
+        'api_key': apiKey,
+        'location': city,
+      };
+      final url = Uri.http(apiDomain, locationUrl, queryParameters);
+      print('====> world_time | url: $url');
       Response response = await get(url);
       Map data = jsonDecode(response.body);
-      String dateTime = data['datetime'];
-      String offset = data['utc_offset'].substring(1, 3);
-      DateTime now = DateTime.parse(dateTime);
-      now = now.add(Duration(hours: int.parse(offset)));
-      isDaytime = now.hour > 5 && now.hour < 20 ? true : false;
-      time = DateFormat.jm().format(now);
-      // time = now.toString().substring(11, 19);
-      print('=====>  Time on world_time: $time');
-      print('=====>  Data on world_time: $data');
+      isIpGeo = apiDomain == 'ipgeolocation.abstractapi.com' ? true : false;
+      print('====> world_time | DATA: $data');
+      continent = isIpGeo ? '${data['continent']}' : continent;
+      country = isIpGeo ? '${data['country']}' : country;
+      city = isIpGeo ? '${data['city']}' : city;
+      flag = isIpGeo ? '${data['flag']['png']}' : flag;
+      time = isIpGeo
+          ? '${data['timezone']['current_time']}'
+          : '${data['datetime']}';
+      print('====> world_time | time 1: $time');
+      time = isIpGeo
+          ? time.substring(0, time.length - 3)
+          : time.substring(time.length - 8, time.length - 3);
+      dynamic hour = time.substring(0, 2);
+      hour = int.parse(hour);
+      dayPart = hour > 5 && hour <= 8
+          ? 'sunrise'
+          : hour > 8 && hour <= 17
+              ? 'midday'
+              : hour > 17 && hour <= 21
+                  ? 'sunset'
+                  : hour > 17 && hour <= 21
+                      ? 'night1'
+                      : 'night2';
+
+      print('====> world_time | continent: $continent');
+      print('====> world_time | country: $country');
+      print('====> world_time | city: $city');
+      print('====> world_time | flag: $flag');
+      print('====> world_time | time 2: $time');
+      print('====> world_time | isIpGeo: $isIpGeo');
+      print('====> world_time | dayPart: $dayPart');
     } catch (e) {
-      print('=====> getTime error: $e');
+      // print('=====> getTime error: $e');
       time = 'Time could not be obtained';
-    }
-  }
-
-  Future<void> getContinent() async {
-    try {
-      var url = Uri.http(apiDomain, locationUrl);
-      Response response = await get(url);
-      Map data = jsonDecode(response.body);
-      // print('=====>  Data on world_time: $data');
-      // String timezone = data['timezone'];
-      timezone = data['timezone'];
-      continent = timezone.substring(0, (timezone.indexOf("/")));
-      print('=====>  Continent on world_time: $continent');
-    } catch (e) {
-      print('=====>  getContinent error: $e');
-      continent = 'Continent could not be obtained';
-    }
-  }
-
-  Future<void> getCity() async {
-    try {
-      var url = Uri.http(apiDomain, locationUrl);
-      Response response = await get(url);
-      Map data = jsonDecode(response.body);
-      // print('=====>  Data on world_time: $data');
-      timezone = data['timezone'];
-      city = timezone.substring((timezone.indexOf("/") + 1));
-      print('=====>  City on world_time: $city');
-    } catch (e) {
-      print('=====> getCity error: $e');
-      city = 'City could not be obtained';
     }
   }
 }

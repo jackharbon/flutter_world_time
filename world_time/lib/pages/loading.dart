@@ -12,28 +12,34 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
   void setUpInitialWorldTime() async {
     WorldTime currentLocation = WorldTime(
-      locationUrl: 'api/ip',
+      apiDomain: 'ipgeolocation.abstractapi.com',
+      locationUrl: 'v1/',
+      apiKey: '2a8a50cebcf24b05a136da317fc5c7fe',
       continent: '',
-      country: 'United Kingdom',
+      country: '',
       city: '',
-      flag: 'uk.png',
+      flag: '',
     );
-    await currentLocation.getTime();
-    await currentLocation.getContinent();
-    await currentLocation.getCity();
+    await currentLocation.getDataFromApi();
     Navigator.pushReplacementNamed(context, '/home', arguments: {
+      'apiDomain': currentLocation.apiDomain,
       'locationUrl': currentLocation.locationUrl,
+      'apiKey': currentLocation.apiKey,
       'continent': currentLocation.continent,
       'country': currentLocation.country,
       'city': currentLocation.city,
       'flag': currentLocation.flag,
       'time': currentLocation.time,
-      'isDaytime': currentLocation.isDaytime,
+      'isIpGeo': currentLocation.isIpGeo,
+      'dayPart': currentLocation.dayPart,
     });
-    // print('=====>  locationUrl on loading: ${currentLocation.locationUrl}');
-    // print('=====>  Continent on loading: ${currentLocation.continent}');
-    // print('=====>  City on loading: ${currentLocation.city}');
-    // print('=====>  Time on loading: ${currentLocation.time}');
+    print('====> loading | continent: ${currentLocation.continent}');
+    print('====> loading | country: ${currentLocation.country}');
+    print('====> loading | city: ${currentLocation.city}');
+    print('====> loading | flag: ${currentLocation.flag}');
+    print('====> loading | time: ${currentLocation.time}');
+    print('====> loading | isIpGeo: ${currentLocation.isIpGeo}');
+    print('====> loading | dayPart: ${currentLocation.dayPart}');
   }
 
   @override

@@ -9,65 +9,263 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
-  int index = 0;
+  // int index = 0;
   List<WorldTime> locations = [
     WorldTime(
-        locationUrl: 'api/timezone/Africa/Nairobi',
-        continent: 'Africa',
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Afrika',
+        country: 'South Africa',
+        city: 'Johannesburg',
+        flag: 'south_africa.jpg'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Afrika',
         country: 'Kenya',
         city: 'Nairobi',
         flag: 'kenya.png'),
     WorldTime(
-        locationUrl: 'api/timezone/Africa/Cairo',
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
         continent: 'Africa',
         country: 'Egypt',
         city: 'Cairo',
         flag: 'egypt.png'),
     WorldTime(
-        locationUrl: 'api/timezone/America/New_York',
-        continent: 'America',
-        country: 'United States',
-        city: 'New York',
-        flag: 'usa.png'),
-    WorldTime(
-        locationUrl: 'api/timezone/Asia/Jakarta',
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
         continent: 'Asia',
         country: 'Indonesia',
         city: 'Jakarta',
         flag: 'indonesia.png'),
     WorldTime(
-        locationUrl: 'api/timezone/Europe/London',
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Asia',
+        country: 'Israel',
+        city: 'Jerusalem',
+        flag: 'israel.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Asia',
+        country: 'Japan',
+        city: 'Tokio',
+        flag: 'japan.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Asia',
+        country: 'Singapore',
+        city: 'Singapore (Pioneer)',
+        flag: 'singapore.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Asia',
+        country: 'South Korea',
+        city: 'Seoul',
+        flag: 'south_korea.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Asia',
+        country: 'Taiwan',
+        city: 'Taipei',
+        flag: 'taiwan.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Asia',
+        country: 'Turkey',
+        city: 'Istanbul',
+        flag: 'turkey.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Europe',
+        country: 'Austria',
+        city: 'Vienna',
+        flag: 'austria.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Europe',
+        country: 'Denmark',
+        city: 'Copenhagen',
+        flag: 'denmark.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Europe',
+        country: 'Finland',
+        city: 'Helsinki',
+        flag: 'finland.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Europe',
+        country: 'France',
+        city: 'Paris',
+        flag: 'france.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Europe',
+        country: 'Germany',
+        city: 'Berlin',
+        flag: 'germany.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Europe',
+        country: 'Poland',
+        city: 'Warsaw',
+        flag: 'poland.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Europe',
+        country: 'Spain',
+        city: 'Barcelona',
+        flag: 'spain.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
         continent: 'Europe',
         country: 'United Kingdom',
         city: 'London',
         flag: 'uk.png'),
     WorldTime(
-        locationUrl: 'api/timezone/Europe/Berlin',
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
         continent: 'Europe',
-        country: 'Germany',
-        city: 'Berlin',
-        flag: 'germany.png'),
+        country: 'Ukraine',
+        city: 'Kyiv',
+        flag: 'ukraine.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'North America',
+        country: 'Canada',
+        city: 'Toronto',
+        flag: 'canada.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'North America',
+        country: 'United States',
+        city: 'New York',
+        flag: 'usa.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'North America',
+        country: 'Mexico',
+        city: 'Mexico City',
+        flag: 'mexico.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Oceania',
+        country: 'Australia',
+        city: 'Melbourn',
+        flag: 'australia.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Oceania',
+        country: 'New Zealand',
+        city: 'Auckland',
+        flag: 'new_zealand.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Oceania',
+        country: 'Marshal Islands',
+        city: 'Majuro',
+        flag: 'marshal_islands.png'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Oceania',
+        country: 'Samoa',
+        city: 'Apia',
+        flag: 'samoa.jpg'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'Oceania',
+        country: 'Solomon Islands',
+        city: 'Honiara',
+        flag: 'solomon_islands.jpg'),
+    WorldTime(
+        apiDomain: 'timezone.abstractapi.com',
+        locationUrl: 'v1/current_time/',
+        apiKey: '5ae4cd55e43045668d718f37179a1159',
+        continent: 'South America',
+        country: 'Brasil',
+        city: 'Sao Paulo',
+        flag: 'brasil.png'),
+    WorldTime(
+        apiDomain: 'ipgeolocation.abstractapi.com',
+        locationUrl: 'v1/',
+        apiKey: '2a8a50cebcf24b05a136da317fc5c7fe',
+        continent: '',
+        country: 'Go Back to Your Location',
+        city: '',
+        flag: 'uk.png'),
   ];
   void updateTime(index) async {
     WorldTime chosenLocation = locations[index];
-    await chosenLocation.getTime();
-    await chosenLocation.getContinent();
-    await chosenLocation.getCity();
+    await chosenLocation.getDataFromApi();
     Navigator.pop(context, {
+      'apiDomain': chosenLocation.apiDomain,
       'locationUrl': chosenLocation.locationUrl,
+      'apiKey': chosenLocation.apiKey,
       'continent': chosenLocation.continent,
       'country': chosenLocation.country,
       'city': chosenLocation.city,
       'flag': chosenLocation.flag,
       'time': chosenLocation.time,
-      'isDaytime': chosenLocation.isDaytime,
+      'isIpGeo': chosenLocation.isIpGeo,
+      'dayPart': chosenLocation.dayPart,
     });
-    print(
-        '=====>  locationUrl on choose_location: ${chosenLocation.locationUrl}');
-    print('=====>  Continent on choose_location: ${chosenLocation.continent}');
-    print('=====>  Country on choose_location: ${chosenLocation.country}');
-    print('=====>  City on choose_location: ${chosenLocation.city}');
-    print('=====>  Time on choose_location: ${chosenLocation.time}');
+    // print('====> loading | continent: ${chosenLocation.continent}');
+    // print('====> loading | country: ${chosenLocation.country}');
+    // print('====> loading | city: ${chosenLocation.city}');
+    // print('====> loading | flag: ${chosenLocation.flag}');
+    // print('====> loading | time: ${chosenLocation.time}');
+    // print('====> loading | isIpGeo: ${chosenLocation.isIpGeo}');
+    // print('====> loading | dayPart: ${chosenLocation.dayPart}');
   }
 
   @override
@@ -78,7 +276,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         itemCount: locations.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 4.0),
+            padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 2.0),
             child: Card(
               child: ListTile(
                 onTap: () {

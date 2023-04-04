@@ -7,6 +7,7 @@ void main() {
   runApp(MaterialApp(
     // home: const HomePage(),
     initialRoute: '/',
+    debugShowCheckedModeBanner: false,
     routes: {
       '/': (context) => const Loading(),
       '/home': (context) => const HomePage(),

@@ -11,15 +11,27 @@ class _HomePageState extends State<HomePage> {
   dynamic data = {};
   @override
   Widget build(BuildContext context) {
-    data = data.isNotEmpty ? data : ModalRoute.of(context)?.settings.arguments;
-    final locationUrl = data['locationUrl'];
+    data = data.isEmpty ? ModalRoute.of(context)?.settings.arguments : data;
+    // print('====> home | DATA: $data');
+    // final apiDomain = data['apiDomain'];
+    // final locationUrl = data['locationUrl'];
+    // final apiKey = data['apiKey'];
+    final continent = data['continent'];
+    final country = data['country'];
     final city = data['city'];
     final flag = data['flag'];
     final time = data['time'];
-    bool isDaytime = data['isDaytime'];
-    String bgImage = isDaytime == true ? 'day.jpg' : 'night.jpg';
-    Color bgColor = isDaytime == true ? Colors.lightBlue : Colors.deepPurple;
-    print('=====>  Data on home: $data');
+    bool isIpGeo = data['isIpGeo'];
+    String dayPart = data['dayPart'];
+    String bgImage = '$dayPart.jpg';
+    Color bgColor = dayPart == true ? Colors.lightBlue : Colors.deepPurple;
+    // print('====> home | continent: $continent');
+    // print('====> home | country: $country');
+    // print('====> home | city: $city');
+    // print('====> home | flag: $flag');
+    // print('====> home | time: $time');
+    // print('====> home | isIpGeo: $isIpGeo');
+    // print('====> home | dayPart: $dayPart');
 
     return Scaffold(
         backgroundColor: bgColor,
@@ -32,49 +44,80 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
+              padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     TextButton.icon(
-                        style: TextButton.styleFrom(
-                            foregroundColor: Colors.white54),
+                        style:
+                            TextButton.styleFrom(foregroundColor: Colors.white),
                         onPressed: () async {
                           dynamic result =
                               await Navigator.pushNamed(context, '/location');
                           setState(() {
                             data = {
                               'city': result['city'],
+                              'continent': result['continent'],
+                              'country': result['country'],
                               'flag': result['flag'],
                               'time': result['time'],
-                              'isDaytime': result['isDaytime'],
+                              'isIpGeo': result['isIpGeo'],
+                              'dayPart': result['dayPart'],
                             };
                           });
                         },
                         icon: const Icon(Icons.edit_location),
-                        label: const Text("Edit city")),
+                        label: const Text(
+                          "Change City",
+                          style: TextStyle(
+                            fontFamily: 'Genos',
+                            fontSize: 26,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.white,
+                          ),
+                        )),
                     const SizedBox(
                       height: 20,
                     ),
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/$flag'),
-                      radius: 60.0,
-                    ),
+                    isIpGeo
+                        ? CircleAvatar(
+                            backgroundColor: Colors.white,
+                            radius: 65,
+                            backgroundImage:
+                                const AssetImage('assets/loading.gif'),
+                            child: CircleAvatar(
+                              radius: 65,
+                              backgroundColor: Colors.transparent,
+                              backgroundImage: NetworkImage(flag),
+                            ),
+                          )
+                        : CircleAvatar(
+                            backgroundImage: AssetImage('assets/$flag'),
+                            radius: 65,
+                          ),
                     const SizedBox(
                       height: 20,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Text(
-                          city,
-                          // 'placeholder',
+                          country,
                           style: const TextStyle(
                             fontFamily: 'Genos',
-                            fontSize: 50,
+                            fontSize: 26,
                             fontWeight: FontWeight.normal,
-                            color: Colors.white70,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          '($continent)',
+                          style: const TextStyle(
+                            fontFamily: 'Genos',
+                            fontSize: 26,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -83,10 +126,22 @@ class _HomePageState extends State<HomePage> {
                       height: 20,
                     ),
                     Text(
+                      city,
+                      style: const TextStyle(
+                        fontFamily: 'Genos',
+                        fontSize: 50,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
                       time,
                       style: const TextStyle(
                         fontFamily: 'Genos',
-                        fontSize: 60,
+                        fontSize: 100,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
