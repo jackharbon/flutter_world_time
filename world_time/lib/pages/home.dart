@@ -21,13 +21,36 @@ class _HomePageState extends State<HomePage> {
     bool isIpGeo = data['isIpGeo'];
     String dayPart = data['dayPart'];
     String bgImage = '$dayPart.jpg';
-    const Color bgColor = Color(0xff4473ab);
-    if (dayPart == 'sunrise') Color bgColor = Color(0xff4473ab);
-    if (dayPart == 'midday') Color bgColor = Colors.red;
-    // if (dayPart == 'midday') Color bgColor = Color(0xff1d6da0);
-    if (dayPart == 'sunset') Color bgColor = Color(0xfff3d2c3);
-    if (dayPart == 'night1') Color bgColor = Color(0xff757077);
-    if (dayPart == 'night2') Color bgColor = Color(0xff02161d);
+    Color bgColor;
+    bgColor = dayPart == 'sunrise'
+        ? const Color(0xff648CBC)
+        : dayPart == 'midday'
+            ? const Color(0xff13689f)
+            : dayPart == 'sunset'
+                ? const Color(0xfffae2d7)
+                : dayPart == 'night1'
+                    ? const Color(0xff787681)
+                    : const Color(0xff103643);
+    Color txtColor;
+    txtColor = dayPart == 'sunrise'
+        ? const Color(0xffEEECE6)
+        : dayPart == 'midday'
+            ? const Color(0xffF9F7F3)
+            : dayPart == 'sunset'
+                ? const Color(0xfffae2d7)
+                : dayPart == 'night1'
+                    ? const Color(0xfff4d197)
+                    : const Color(0xffcfe9ff);
+    Color shadowColor;
+    shadowColor = dayPart == 'sunrise'
+        ? const Color(0xff2E2B0E)
+        : dayPart == 'midday'
+            ? const Color(0xff36607D)
+            : dayPart == 'sunset'
+                ? const Color(0xff5a537d)
+                : dayPart == 'night1'
+                    ? const Color(0xff020609)
+                    : const Color(0xff1C424E);
 
     // print('====> home | continent: $continent');
     // print('====> home | country: $country');
@@ -54,8 +77,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     TextButton.icon(
-                        style:
-                            TextButton.styleFrom(foregroundColor: Colors.white),
+                        style: TextButton.styleFrom(foregroundColor: txtColor),
                         onPressed: () async {
                           dynamic result =
                               await Navigator.pushNamed(context, '/location');
@@ -71,34 +93,62 @@ class _HomePageState extends State<HomePage> {
                             };
                           });
                         },
-                        icon: const Icon(Icons.edit_location),
-                        label: const Text(
+                        icon: Icon(
+                          Icons.edit_location,
+                          shadows: <Shadow>[
+                            Shadow(color: shadowColor, blurRadius: 10.0)
+                          ],
+                        ),
+                        label: Text(
                           "Change City",
                           style: TextStyle(
                             fontFamily: 'Genos',
-                            fontSize: 26,
+                            fontSize: 30,
                             fontWeight: FontWeight.normal,
-                            color: Colors.white,
+                            color: txtColor,
+                            shadows: [
+                              Shadow(
+                                blurRadius: 10.0,
+                                color: shadowColor,
+                                offset: const Offset(1.0, 2.0),
+                              ),
+                            ],
                           ),
                         )),
                     const SizedBox(
                       height: 20,
                     ),
                     isIpGeo
-                        ? CircleAvatar(
-                            backgroundColor: Colors.white,
-                            radius: 65,
-                            backgroundImage:
-                                const AssetImage('assets/loading.gif'),
+                        ? Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(65.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: shadowColor, blurRadius: 10.0)
+                                ]),
                             child: CircleAvatar(
+                              backgroundColor: txtColor,
                               radius: 65,
-                              backgroundColor: Colors.transparent,
-                              backgroundImage: NetworkImage(flag),
+                              backgroundImage:
+                                  const AssetImage('assets/loading.gif'),
+                              child: CircleAvatar(
+                                radius: 65,
+                                backgroundColor: Colors.transparent,
+                                backgroundImage: NetworkImage(flag),
+                              ),
                             ),
                           )
-                        : CircleAvatar(
-                            backgroundImage: AssetImage('assets/$flag'),
-                            radius: 65,
+                        : Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(65.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: shadowColor, blurRadius: 10.0)
+                                ]),
+                            child: CircleAvatar(
+                              backgroundImage: AssetImage('assets/$flag'),
+                              radius: 65,
+                            ),
                           ),
                     const SizedBox(
                       height: 20,
@@ -108,20 +158,34 @@ class _HomePageState extends State<HomePage> {
                       children: <Widget>[
                         Text(
                           country,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontFamily: 'Genos',
-                            fontSize: 26,
+                            fontSize: 30,
                             fontWeight: FontWeight.normal,
-                            color: Colors.white,
+                            color: txtColor,
+                            shadows: [
+                              Shadow(
+                                blurRadius: 10.0,
+                                color: shadowColor,
+                                offset: const Offset(1.0, 2.0),
+                              ),
+                            ],
                           ),
                         ),
                         Text(
                           '($continent)',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontFamily: 'Genos',
-                            fontSize: 26,
+                            fontSize: 30,
                             fontWeight: FontWeight.normal,
-                            color: Colors.white,
+                            color: txtColor,
+                            shadows: [
+                              Shadow(
+                                blurRadius: 10.0,
+                                color: shadowColor,
+                                offset: const Offset(1.0, 2.0),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -131,11 +195,18 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Text(
                       city,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontFamily: 'Genos',
                         fontSize: 50,
                         fontWeight: FontWeight.normal,
-                        color: Colors.white,
+                        color: txtColor,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 10.0,
+                            color: shadowColor,
+                            offset: const Offset(2.0, 3.0),
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(
@@ -143,11 +214,18 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Text(
                       time,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontFamily: 'Genos',
                         fontSize: 100,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: txtColor,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 20.0,
+                            color: shadowColor,
+                            offset: const Offset(2.0, 3.0),
+                          ),
+                        ],
                       ),
                     ),
                   ]),

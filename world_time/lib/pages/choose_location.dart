@@ -271,37 +271,45 @@ class _ChooseLocationState extends State<ChooseLocation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: const Color(0xffedede9),
       body: ListView.builder(
         itemCount: locations.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 2.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.0),
             child: Card(
+              color: const Color(0xfff5ebe0),
               child: ListTile(
                 onTap: () {
                   updateTime(index);
                 },
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                        '${locations[index].city} - ${locations[index].country}'),
-                    Text('(${locations[index].continent})'),
-                  ],
-                ),
-                leading: CircleAvatar(
-                  backgroundImage:
-                      AssetImage('assets/${locations[index].flag}'),
-                ),
+                title: locations[index].city != ''
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(locations[index].city),
+                          Text('(${locations[index].continent})'),
+                        ],
+                      )
+                    : Text(locations[index].country),
+                subtitle: locations[index].city != ''
+                    ? Text(locations[index].country)
+                    : null,
+                leading: locations[index].city != ''
+                    ? CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/${locations[index].flag}'),
+                      )
+                    : const Icon(Icons.arrow_back_ios_new),
               ),
             ),
           );
         },
       ),
       appBar: AppBar(
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: const Color(0xffd5bdaf),
         title: const Text('Choose city'),
         centerTitle: true,
         elevation: 0,

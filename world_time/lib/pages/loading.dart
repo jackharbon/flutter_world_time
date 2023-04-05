@@ -33,13 +33,13 @@ class _LoadingState extends State<Loading> {
       'isIpGeo': currentLocation.isIpGeo,
       'dayPart': currentLocation.dayPart,
     });
-    print('====> loading | continent: ${currentLocation.continent}');
-    print('====> loading | country: ${currentLocation.country}');
-    print('====> loading | city: ${currentLocation.city}');
-    print('====> loading | flag: ${currentLocation.flag}');
-    print('====> loading | time: ${currentLocation.time}');
-    print('====> loading | isIpGeo: ${currentLocation.isIpGeo}');
-    print('====> loading | dayPart: ${currentLocation.dayPart}');
+    // print('====> loading | continent: ${currentLocation.continent}');
+    // print('====> loading | country: ${currentLocation.country}');
+    // print('====> loading | city: ${currentLocation.city}');
+    // print('====> loading | flag: ${currentLocation.flag}');
+    // print('====> loading | time: ${currentLocation.time}');
+    // print('====> loading | isIpGeo: ${currentLocation.isIpGeo}');
+    // print('====> loading | dayPart: ${currentLocation.dayPart}');
   }
 
   @override
@@ -51,15 +51,15 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue,
+      backgroundColor: const Color(0xfff5ebe0),
       body: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
               SpinKitFadingCircle(
-                color: Colors.yellow,
-                size: 80.0,
+                color: Color(0xffd5bdaf),
+                size: 100.0,
               ),
             ]),
       ),
