@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,10 +24,12 @@ class _HomePageState extends State<HomePage> {
     String bgImage = '$dayPart.jpg';
     String info = data['info'];
     Color bgColor;
+
     bgColor = dayPart == 'sunrise'
         ? const Color(0xff648CBC)
         : dayPart == 'midday'
             ? const Color(0xff13689f)
+            // ? const Color(0xff13689f)
             : dayPart == 'sunset'
                 ? const Color(0xfffae2d7)
                 : dayPart == 'night1'
@@ -36,7 +39,7 @@ class _HomePageState extends State<HomePage> {
     txtColor = dayPart == 'sunrise'
         ? const Color(0xffEEECE6)
         : dayPart == 'midday'
-            ? const Color(0xffF9F7F3)
+            ? const Color(0xffffe972)
             : dayPart == 'sunset'
                 ? const Color(0xfffae2d7)
                 : dayPart == 'night1'
@@ -199,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                       city,
                       style: TextStyle(
                         fontFamily: 'Genos',
-                        fontSize: 50,
+                        fontSize: 40,
                         fontWeight: FontWeight.normal,
                         color: txtColor,
                         shadows: [
