@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
     bool isIpGeo = data['isIpGeo'];
     String dayPart = data['dayPart'];
     String bgImage = '$dayPart.jpg';
+    String info = data['info'];
     Color bgColor;
     bgColor = dayPart == 'sunrise'
         ? const Color(0xff648CBC)
@@ -71,7 +72,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
+              padding: const EdgeInsets.fromLTRB(10, 80, 10, 0),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -90,6 +91,7 @@ class _HomePageState extends State<HomePage> {
                               'time': result['time'],
                               'isIpGeo': result['isIpGeo'],
                               'dayPart': result['dayPart'],
+                              'info': result['info'],
                             };
                           });
                         },
@@ -224,6 +226,23 @@ class _HomePageState extends State<HomePage> {
                             blurRadius: 20.0,
                             color: shadowColor,
                             offset: const Offset(2.0, 3.0),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Text(
+                      info,
+                      style: TextStyle(
+                        fontFamily: 'Genos',
+                        fontSize: 26,
+                        fontWeight: FontWeight.normal,
+                        fontStyle: FontStyle.italic,
+                        color: txtColor,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 10.0,
+                            color: shadowColor,
+                            offset: const Offset(1.0, 2.0),
                           ),
                         ],
                       ),

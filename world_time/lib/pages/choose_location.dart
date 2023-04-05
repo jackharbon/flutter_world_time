@@ -258,6 +258,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
       'time': chosenLocation.time,
       'isIpGeo': chosenLocation.isIpGeo,
       'dayPart': chosenLocation.dayPart,
+      'info': chosenLocation.info,
     });
     // print('====> loading | continent: ${chosenLocation.continent}');
     // print('====> loading | country: ${chosenLocation.country}');

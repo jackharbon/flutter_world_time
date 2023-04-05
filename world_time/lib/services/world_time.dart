@@ -12,6 +12,7 @@ class WorldTime {
   String flag = '';
   String time = '';
   String dayPart = '';
+  String info = '';
   bool isIpGeo = false;
 
   WorldTime({
@@ -58,7 +59,6 @@ class WorldTime {
                   : hour > 21 && hour <= 23
                       ? 'night1'
                       : 'night2';
-
       // print('====> world_time | continent: $continent');
       // print('====> world_time | country: $country');
       // print('====> world_time | city: $city');
@@ -68,7 +68,14 @@ class WorldTime {
       // print('====> world_time | dayPart: $dayPart');
     } catch (e) {
       // print('=====> getTime error: $e');
-      time = 'Time could not be obtained';
+      time = '12:43';
+      city = 'London';
+      country = 'United Kingdom';
+      continent = 'Europe';
+      flag = 'uk.jpg';
+      dayPart = 'midday';
+      info =
+          'You are seeing static demo version due to the lack of connection to API';
     }
   }
 }

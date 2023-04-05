@@ -32,6 +32,7 @@ class _LoadingState extends State<Loading> {
       'time': currentLocation.time,
       'isIpGeo': currentLocation.isIpGeo,
       'dayPart': currentLocation.dayPart,
+      'info': currentLocation.info,
     });
     // print('====> loading | continent: ${currentLocation.continent}');
     // print('====> loading | country: ${currentLocation.country}');
