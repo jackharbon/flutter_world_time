@@ -13,7 +13,7 @@ class _LoadingState extends State<Loading> {
   void setUpInitialWorldTime() async {
     WorldTime currentLocation = WorldTime(
       apiDomain: 'ipgeolocation.abstractapi.com',
-      locationUrl: 'v1/',
+      locationUrl: 'v1/aa',
       apiKey: '2a8a50cebcf24b05a136da317fc5c7fe',
       continent: '',
       country: '',
