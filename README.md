@@ -71,6 +71,14 @@ After opening the app the users will see a current time in their location (based
 -  midnight
 -  late night
 
+In case of lack of internet connection app shows demo static version with examples of:
+
+-  country flag
+-  country
+-  continent
+-  city
+-  time
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Built With
@@ -171,7 +179,7 @@ Install useful software:
 
 # License
 
-All rights belong to [Northcoders](http://northcoders.com). See <a href="https://github.com/jackharbon/flutter_world_time/blob/main/LICENSE">`LICENSE.txt` </a> for more information.
+GNU GENERAL PUBLIC LICENSE, see <a href="https://github.com/jackharbon/flutter_world_time/blob/main/LICENSE">`LICENSE.txt` </a> for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
