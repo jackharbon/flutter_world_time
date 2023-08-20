@@ -57,7 +57,7 @@
 
 # About The Project
 
-<img src="world_time/project_screenshot.jpg" alt="screenshots">
+<img src="project_screenshot.jpg" alt="screenshots">
 
 ## App Description
 

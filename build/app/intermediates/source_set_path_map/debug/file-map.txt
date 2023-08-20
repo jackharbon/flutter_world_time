@@ -1,0 +1,13 @@
+uk.harbon.mynotes.app-core-1.6.0-0 /home/jacek/.gradle/caches/transforms-3/03204e7a863cd68980f40b7d5a3e5e44/transformed/core-1.6.0/res
+uk.harbon.mynotes.app-jetified-window-java-1.0.0-beta04-1 /home/jacek/.gradle/caches/transforms-3/4aa4d160ec8811646ef49f7559ae16f1/transformed/jetified-window-java-1.0.0-beta04/res
+uk.harbon.mynotes.app-jetified-annotation-experimental-1.1.0-2 /home/jacek/.gradle/caches/transforms-3/8c07c387b91aa9a0f423e4416f85725d/transformed/jetified-annotation-experimental-1.1.0/res
+uk.harbon.mynotes.app-jetified-window-1.0.0-beta04-3 /home/jacek/.gradle/caches/transforms-3/e4a8944d2b7a868dd4d180b83310bada/transformed/jetified-window-1.0.0-beta04/res
+uk.harbon.mynotes.app-debug-4 /home/jacek/Programming/Coding/Flutter/Flutter-Apps/world_time/android/app/src/debug/res
+uk.harbon.mynotes.app-main-5 /home/jacek/Programming/Coding/Flutter/Flutter-Apps/world_time/android/app/src/main/res
+uk.harbon.mynotes.app-google-services-6 /home/jacek/Programming/Coding/Flutter/Flutter-Apps/world_time/build/app/generated/res/google-services/debug
+uk.harbon.mynotes.app-pngs-7 /home/jacek/Programming/Coding/Flutter/Flutter-Apps/world_time/build/app/generated/res/pngs/debug
+uk.harbon.mynotes.app-resValues-8 /home/jacek/Programming/Coding/Flutter/Flutter-Apps/world_time/build/app/generated/res/resValues/debug
+uk.harbon.mynotes.app-rs-9 /home/jacek/Programming/Coding/Flutter/Flutter-Apps/world_time/build/app/generated/res/rs/debug
+uk.harbon.mynotes.app-mergeDebugResources-10 /home/jacek/Programming/Coding/Flutter/Flutter-Apps/world_time/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+uk.harbon.mynotes.app-mergeDebugResources-11 /home/jacek/Programming/Coding/Flutter/Flutter-Apps/world_time/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+uk.harbon.mynotes.app-merged_res-12 /home/jacek/Programming/Coding/Flutter/Flutter-Apps/world_time/build/app/intermediates/merged_res/debug
